@@ -1,0 +1,45 @@
+package bonocovid;
+
+
+import java.io.*;
+
+public class BonoCovid 
+{
+
+  
+    public static void main(String[] args) throws IOException {
+      
+        BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
+        
+         int  ingresomensual, ingresoacumulado=0, meses;
+      
+         String  ingresado;
+         
+    //obtener ingresos mensuales
+      meses = 1;
+    while(meses<=7){
+        
+        System.out.println("Ingrese el dinero dle monto obtenido el mes" + meses);
+        ingresado = lector.readLine();
+        ingresomensual = Integer.parseInt(ingresado);
+        
+        ingresoacumulado+= ingresomensual;
+        meses++;
+    }
+    double promedioingreso;
+    
+    promedioingreso =(double)ingresoacumulado/7;
+    System.out.println("EL promedio de inreso es: $" + promedioingreso);
+    
+    if(promedioingreso<500000){
+        System.out.println("El usuario califica para el bono covid");
+    }
+    else{
+        System.out.println("EL usuario no califica para el bono covid");
+    }
+
+   
+}
+  
+    
+}
